@@ -326,28 +326,39 @@ const BillScreen = props => {
                 </View>
 
                 <View style={{flex: 1}}>
-                  {maintainance > 0 && (
+                  {maintainance > 0 ? (
                     <Text style={styles.categoryTxt}>
                       Rs {maintainance > 0 ? maintainance : ' '}
                     </Text>
+                  ) : (
+                    <Text style={styles.categoryTxt}>
+                      {' '}
+                      {/* Display an empty space if maintainance is not greater than 0 */}
+                    </Text>
                   )}
 
-                  {ltPaymentCharge > 0 && (
+                  {ltPaymentCharge > 0 ? (
                     <Text style={styles.categoryTxt}>
                       Rs {ltPaymentCharge > 0 ? ltPaymentCharge : ' '}
                     </Text>
+                  ) : (
+                    <Text style={styles.categoryTxt}> </Text>
                   )}
 
-                  {balance > 0 && (
+                  {balance > 0 ? (
                     <Text style={styles.categoryTxt}>
                       Rs {balance > 0 ? balance : ' '}
                     </Text>
+                  ) : (
+                    <Text style={styles.categoryTxt}> </Text>
                   )}
 
-                  {extra > 0 && (
+                  {extra > 0 ? (
                     <Text style={[styles.categoryTxt, {marginBottom: 10}]}>
                       Rs {extra > 0 ? extra : ' '}
                     </Text>
+                  ) : (
+                    <Text style={styles.categoryTxt}> </Text>
                   )}
                 </View>
               </View>
@@ -384,32 +395,6 @@ const BillScreen = props => {
                 </Text>
               </View>
             </View>
-
-            {/* <Text
-              style={{
-                fontStyle: 'italic',
-                marginTop: 10,
-                fontFamily: fontFamily.AvenirObliqueOrItalic,
-              }}>
-              Please make payment at cash counter.
-            </Text>
-            <Text
-              style={{
-                fontStyle: 'italic',
-                fontFamily: fontFamily.AvenirObliqueOrItalic,
-              }}>
-              Also available fresh Paneer and Curd.
-            </Text>
-            <Text
-              style={{
-                fontStyle: 'italic',
-                fontFamily: fontFamily.AvenirObliqueOrItalic,
-              }}>
-              Please make payment before 10th of current month.{' '}
-            </Text>
-            <Text style={{marginTop: 20, fontFamily: fontFamily.Avenir}}>
-              Receiver's Sign
-            </Text> */}
           </View>
 
           <View style={[styles.row, {marginTop: 100}]}>
